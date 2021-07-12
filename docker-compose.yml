@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+    redis:
+        container_name: redis-cache
+        image: redis
+        ports:
+            - '6379:6379'
+
+    mongo:
+        container_name: mongo-db
+        image: mongo
+        ports:
+            - '27017:27017'
+    
+    server:
+        build: ./backend
+        container_name: back-end
+        ports:
+            - '5000:5000'
+        depends_on:
+            - redis
+            - mongo
+
+    client:
+        build: ./frontend
+        container_name: front-end
+        ports:
+            - '3000:3000'
+        depends_on:
+            - server
+        stdin_open: true
