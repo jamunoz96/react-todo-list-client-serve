@@ -1,3 +1,3 @@
 # react-todo-list-client-serve
 
-Proyecto front-end Reactjs, TodoList con autenticación JWT y manejo de estados REDUX
+Proyecto front-end Reactjs, TodoList con autenticación JWT, servidor en Express, DB mongo y cache Redis, manejo de estados REDUX
